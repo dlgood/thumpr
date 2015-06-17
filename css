@@ -1,0 +1,22 @@
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - scss
+
+Backtrace:
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `read'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `update_stylesheet'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:283:in `block in watch'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:198:in `call'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/linux.rb:48:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - scss"; }

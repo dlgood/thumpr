@@ -1,0 +1,23 @@
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - public/scss
+
+Backtrace:
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `read'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `update_stylesheet'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:235:in `watch'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/plugin.rb:107:in `method_missing'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/exec.rb:463:in `watch_or_update'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/exec.rb:326:in `process_result'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/exec.rb:41:in `parse'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/lib/sass/exec.rb:21:in `parse!'
+/home/brandonw/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-3.2.19/bin/sass:13:in `<top (required)>'
+/home/brandonw/.rbenv/versions/2.1.5/bin/sass:23:in `load'
+/home/brandonw/.rbenv/versions/2.1.5/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - public/scss"; }

@@ -10,11 +10,11 @@ helpers do
   end
 end
 
-get '/login' do 
-  erb :'users/login'
+get '/signin' do 
+  erb :'users/signin'
 end
 
-post '/login' do
+post '/signin' do
   @user = User.find_by_email(params[:email])
 
   if @user
@@ -30,12 +30,12 @@ get '/logout' do
   redirect '/'
 end
 
-get '/signup' do
+get '/register' do
   @user = User.new
   erb :'users/register'
 end
 
-post '/signup' do
+post '/register' do
   @user = User.new(
   name:     params[:name],
   email:    params[:email],

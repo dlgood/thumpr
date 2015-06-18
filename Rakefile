@@ -1,4 +1,5 @@
 require_relative 'lib/users_importer'
+require_relative 'lib/stories_importer'
 require 'rake'
 require "sinatra/activerecord/rake"
 require ::File.expand_path('../config/environment', __FILE__)
@@ -58,4 +59,5 @@ end
 desc 'populate the test database with data'
 task 'db:populate' do
   UsersImporter.new.import
+  StoriesImporter.new.import
 end

@@ -10,11 +10,11 @@ helpers do
   end
 end
 
-get '/signin' do 
-  erb :'users/signin'
+get '/session/new' do 
+  erb :'session/new'
 end
 
-post '/signin' do
+post '/session/new' do
   @user = User.find_by_email(params[:email])
 
   if @user
@@ -25,17 +25,17 @@ post '/signin' do
   end
 end
 
-get '/signout' do
+get '/session' do
   session[:email] = ""
   redirect '/'
 end
 
-get '/register' do
+get '/users/new' do
   @user = User.new
-  erb :'users/register'
+  erb :'users/new'
 end
 
-post '/register' do
+post '/users' do
   @user = User.new(
     name:     params[:name],
     email:    params[:email],
@@ -45,7 +45,7 @@ post '/register' do
     session[:email] = @user.email
     redirect '/'
   else
-    erb :'users/register'
+    erb :'users/new'
   end
 end
 
@@ -73,7 +73,7 @@ post '/stories' do
     priority: params[:priority]
   )
   if @story.save
-    redirect '/stories/all'
+    redirect '/stories'
     #should add callout to top of all stories saying story saved successfully
   else
     erb :'stories/new'

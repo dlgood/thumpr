@@ -10,26 +10,28 @@
   <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Thumpr</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main"></button>
     </div>
-    <div class="nav navbar-nav navbar-left">
-      <li><a href="/stories">All Stories</a></li>
-      <% if user_logged_in? %>
-        <li><a href="/stories/new">New Story</a></li>
-      <% end %>
-    </div>
-    <div class="nav navbar-nav navbar-right">
-      <% if user_logged_in? %>
-        <li><a href="/session">Sign Out</a></li>
-      <% else %>
-        <li><a href="/users/new">Register</a></li>
-        <li><a href="/session/new">Sign In</a></li>
-      <% end %>
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <div class="nav navbar-nav navbar-left">
+        <li><a href="/stories">All Stories</a></li>
+        <% if user_logged_in? %>
+          <li><a href="/stories/new">New Story</a></li>
+        <% end %>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <% if user_logged_in? %>
+          <li><a href="/session">Sign Out</a></li>
+        <% else %>
+          <li><a href="/users/new">Register</a></li>
+          <li><a href="/session/new">Sign In</a></li>
+        <% end %>
+      </div>
     </div>
   </nav>
   <%= yield %>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
   <script src="/js/flat-ui.min.js"></script>
   <script src="/js/application.js"></script>
 </body>

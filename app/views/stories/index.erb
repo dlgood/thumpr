@@ -1,0 +1,37 @@
+<h1>All stories</h1>
+<div class="stories-list">
+  <table>
+    <tr>
+      <th>
+        ID
+      </th>
+      <th>
+        Summary
+      </th>
+      <th>
+        Creator
+      </th>
+      <th>
+        Assignee
+      </th>
+    </tr>
+    <% @stories.each do |stories| %>
+    <% # Need to filter out completed and invisible %>
+    <tr>
+      <td>
+        <%= stories.id %>
+      </td>
+      <td>
+        <%= stories.role %> should be able to <%= stories.goal %>
+      </td>
+      <td>
+        <%= stories.user_id %>
+      </td>
+      <td>
+        <%= stories.assignee %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+

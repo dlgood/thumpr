@@ -25,7 +25,7 @@ post '/signin' do
   end
 end
 
-get '/logout' do
+get '/signout' do
   session[:email] = ""
   redirect '/'
 end
@@ -42,7 +42,7 @@ post '/register' do
   password: params[:password]
   )
   if @user.save
-
+    session[:email] = @user.email
     redirect '/'
   else
     erb :'users/register'

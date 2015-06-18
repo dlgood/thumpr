@@ -37,9 +37,9 @@ end
 
 post '/register' do
   @user = User.new(
-  name:     params[:name],
-  email:    params[:email],
-  password: params[:password]
+    name:     params[:name],
+    email:    params[:email],
+    password: params[:password]
   )
   if @user.save
     session[:email] = @user.email
@@ -60,10 +60,10 @@ end
 
 post '/stories' do 
   @story = Story.new(
-    role: params[:role],
-    goal: params[:goal],
-    benefit: params[:benefit],
-    fftext: params[:fftext],
+    role:     params[:role],
+    goal:     params[:goal],
+    benefit:  params[:benefit],
+    fftext:   params[:fftext],
     assignee: params[:assignee],
     priority: params[:priority]
   )

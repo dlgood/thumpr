@@ -1,10 +1,8 @@
 body, html {
   height: 100%; }
 
-.wrapper {
-  overflow: auto;
-  display: block;
-  height: 100%; }
+.main {
+  margin: 30px; }
 
 .login-form {
   margin: 50px auto 0 auto;
@@ -12,3 +10,5 @@ body, html {
   .login-form h4 {
     margin: 0 0 24px 0;
     text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

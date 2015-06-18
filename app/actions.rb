@@ -8,6 +8,10 @@ helpers do
       User.find_by_email(session[:email])
     end
   end
+
+  def get_all_users
+    @users = User.all
+  end
 end
 
 get '/session/new' do 
@@ -59,6 +63,7 @@ get '/stories' do
 end
 
 get '/stories/new' do 
+  get_all_users
   @story = Story.new
   erb :'stories/new'
 end  
@@ -69,7 +74,7 @@ post '/stories' do
     goal:     params[:goal],
     benefit:  params[:benefit],
     fftext:   params[:fftext],
-    assignee: params[:assignee],
+    # assignee: params[:assignee],
     priority: params[:priority]
   )
   if @story.save

@@ -53,6 +53,11 @@ get '/' do
   erb :index
 end
 
+get '/stories' do
+  @stories = Story.all
+  erb :'stories/index'
+end
+
 get '/stories/new' do 
   @story = Story.new
   erb :'stories/new'

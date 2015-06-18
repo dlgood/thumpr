@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617214520) do
+ActiveRecord::Schema.define(version: 20150618181233) do
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "p_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stories", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150617214520) do
     t.string   "goal"
     t.string   "benefit"
     t.string   "fftext"
-    t.string   "assignee"
+    t.integer  "assignee_id"
     t.integer  "priority"
     t.boolean  "visible"
     t.boolean  "completed"
@@ -27,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150617214520) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "stories", ["user_id"], name: "index_stories_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

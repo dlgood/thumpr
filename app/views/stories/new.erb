@@ -1,0 +1,41 @@
+<h1>Create a new story</h1>
+
+<form method="post" action="/stories">
+  <div>
+    <p>The fields in this first section are required.</p> 
+    <div>
+      <label>As a </label>
+      <input type="text" name="role" value="<%= @story.role %>">
+    </div>
+    <div>
+      <label>I should be able to </label>
+      <input type="text" name="goal" value="<%= @story.goal %>">  
+    </div>
+    <div>
+      <label>Because </label>
+      <input type="text" name="benefit" value="<%= @story.benefit %>">  
+    </div>
+    <hr>
+    <p>The following fields are optional</p>
+    <div>
+      <label>Additional details </label>
+      <textarea name = "fftext" rows = "7" cols = "40" value = "<%= @story.fftext %>">
+        (start state) Given 
+        (actor action) When I 
+        (system feedback) The system
+        (acceptance criteria) We will know this is done when we can
+      </textarea> 
+    </div>
+    <div>
+      <label>Assignee </label>
+      <input type="text" name="assignee" value="<%= @story.assignee %>">  
+    </div>
+    <div>
+      <label>Priority </label>
+      <input type="text" name="priority" value="<%= @story.priority %>">  
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </div>
+</form>

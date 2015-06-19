@@ -13,15 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150618181233) do
 
-  create_table "projects", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "p_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "stories", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "team_id"
     t.string   "role"
     t.string   "goal"
     t.string   "benefit"
@@ -37,7 +31,14 @@ ActiveRecord::Schema.define(version: 20150618181233) do
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id"
 
+  create_table "teams", force: :cascade do |t|
+    t.string   "team_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
+    t.integer  "team_id"
     t.string   "name"
     t.string   "email"
     t.string   "password"

@@ -69,3 +69,6 @@ body, html {
 
 .stories {
   background-color: #34495E; }
+
+.float-right {
+  float: right; }

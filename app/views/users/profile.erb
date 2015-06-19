@@ -10,13 +10,13 @@
       <div class="story-group">
         <header>Written Stories</header>
         <% @user.stories.each do |story| %>
-          <a href="/stories/edit/<%= story.id %>"><%= story.role %> should be able to <%= story.goal.downcase %></a>
+          <a href="/stories/edit/<%= story.id %>"><%= story.role %> should be able to <%= story.goal.downcase %><span class="fui-arrow-right float-right"></span></a>
       <% end %>
       </div>
       <div class="story-group">
         <header>Assigned Stories</header>
         <% @stories.where(assignee: @user.id).each do |assigned_story| %>
-          <a href="/stories/edit/<%= assigned_story.id %>"><%= assigned_story.role %> should be able to <%= assigned_story.goal.downcase %></a>
+          <a href="/stories/edit/<%= assigned_story.id %>"><%= assigned_story.role %> should be able to <%= assigned_story.goal.downcase %><span class="fui-arrow-right float-right"></span></a>
         <% end %>
       </div>
       <div class="story-group">

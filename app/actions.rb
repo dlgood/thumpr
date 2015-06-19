@@ -98,8 +98,8 @@ post '/stories' do
   end
 end
 
-get '/stories/edit/:id' do
-  @story = Story.find params[:id]
+get '/stories/:id/edit' do
+  @story = Story.find (params[:id])
   get_all_users
   erb :'stories/edit'
 end  

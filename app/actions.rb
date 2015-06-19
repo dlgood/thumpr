@@ -53,13 +53,17 @@ post '/users' do
   end
 end
 
+get '/users/:id' do
+  @user = User.find(params[:id])
+  @stories = Story.all
+  erb :'users/profile'
+end
+
 get '/' do
   if user_logged_in?
-    @stories = Story.where(team_id: get_current_user.team_id).all
-    @team = User.where(team_id: get_current_user.team_id).all
-    erb :'stories/index'
+    redirect '/stories'
   else
-    erb :'session/new'
+    redirect '/session/new'
   end
 end
 
@@ -102,17 +106,6 @@ end
 
 post '/stories/edit' do 
   @story = Story.find(params[:id]).update_attributes(params[:story])
-  # if @story.save
-  #   redirect '/stories'
-  #   #should add callout to top of all stories saying story saved successfully
-  # else
-    @stories = Story.all
-    erb :'stories/index'
-  # end
+  redirect '/stories'
 end
 
-get '/users/:id' do
-  @user = User.find(params[:id])
-  @stories = Story.all
-  erb :'users/profile'
-end

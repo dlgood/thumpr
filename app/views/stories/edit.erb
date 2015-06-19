@@ -20,7 +20,7 @@
   </div>
   <div class="select-group">
     <label>Assignee </label>
-    <select class="form-control assignee" name="story[userid]" >
+    <select class="form-control assignee" name="story[assignee_id]" >
       <option disabled selected></option>
       <% @users.each do |user| %>    
         <option value="<%= user.id %>"><%= user.name %></option>

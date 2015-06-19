@@ -98,10 +98,9 @@ get '/stories/:id/edit' do
   erb :'stories/edit'
 end  
 
-post '/stories/:id' do 
+post '/stories/edit' do 
   @story = Story.find(params[:id]).update_attributes(params[:story])
-  @stories = Story.all
-  erb :'stories/index'
+  redirect '/stories'
 end
 
 get '/users/:id' do

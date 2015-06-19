@@ -36,6 +36,11 @@
         <% end %>
       </table>
     </div>
+    <p>team members</p>
+    <% @team.each do |team_member| %>
+      <%= team_member.name  %>
+    <% end %>
+
   </div>
 <div>
 

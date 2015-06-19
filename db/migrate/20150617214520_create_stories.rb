@@ -11,6 +11,7 @@ class CreateStories < ActiveRecord::Migration
       t.integer :priority
       t.boolean :visible
       t.boolean :completed
+      t.boolean :blocked
       t.datetime :completed_at
       t.timestamps
     end

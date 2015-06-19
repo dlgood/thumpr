@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20150618181233) do
     t.integer  "priority"
     t.boolean  "visible"
     t.boolean  "completed"
-    t.boolean  "blocked"
     t.datetime "completed_at"
     t.datetime "created_at"
     t.datetime "updated_at"

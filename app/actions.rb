@@ -65,7 +65,7 @@ end
 
 get '/stories' do
   @stories = Story.where(team_id: get_current_user.team_id).all
-  @team = Team.users.where(id: get_current_user.team_id).all
+  @team = User.where(id: get_current_user.team_id).all
   erb :'stories/index'
 end
 

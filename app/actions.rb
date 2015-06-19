@@ -80,7 +80,7 @@ post '/stories' do
     goal:         params[:goal],
     benefit:      params[:benefit],
     fftext:       params[:fftext],
-    assignee_id:  params[:userid],
+    assignee_id:  params[:userid].to_i,
     priority:     params[:priority],
     team_id:      get_current_user.team_id
   )

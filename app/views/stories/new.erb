@@ -22,10 +22,10 @@
     </div>
     <div class="select-group">
       <label>Assignee </label>
-      <select class="form-control assignee">
+      <select class="form-control assignee" name="userid" >
         <option disabled selected></option>
         <% @users.each do |user| %>    
-          <option name="userid" value="<%= user.id %>"><%= user.name %></option>
+          <option value="<%= user.id %>"><%= user.name %></option>
         <% end %>
       </select>
     </div>

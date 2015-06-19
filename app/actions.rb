@@ -25,7 +25,7 @@ post '/session/new' do
     session[:email] = @user.email
     redirect '/'
   else
-    erb :'users/register'
+    erb :'session/new'
   end
 end
 
@@ -54,7 +54,12 @@ post '/users' do
 end
 
 get '/' do
-  erb :index
+  if user_logged_in?
+    @stories = Story.all
+    erb :'stories/index'
+  else
+    erb :'session/new'
+  end
 end
 
 get '/stories' do
@@ -70,12 +75,14 @@ end
 
 post '/stories' do 
   @story = Story.new(
-    role:     params[:role],
-    goal:     params[:goal],
-    benefit:  params[:benefit],
-    fftext:   params[:fftext],
-    # assignee: params[:assignee],
-    priority: params[:priority]
+    role:         params[:role],
+    user_id:      get_current_user.id,
+    goal:         params[:goal],
+    benefit:      params[:benefit],
+    fftext:       params[:fftext],
+    assignee_id:  params[:userid].to_i,
+    priority:     params[:priority],
+    team_id:      get_current_user.team_id
   )
   if @story.save
     redirect '/stories'
@@ -83,4 +90,11 @@ post '/stories' do
   else
     erb :'stories/new'
   end
+end
+
+get '/stories/edit/:id' do
+  @story = Story.find params[:id]
+  erb :'stories/edit'
 end  
+
+

@@ -30,7 +30,7 @@
             <%= stories.user.name %>
           </td>
           <td>
-            <%= stories.assignee %>
+            <%= User.find(stories.assignee_id).name %>
           </td>
         </tr>
         <% end %>

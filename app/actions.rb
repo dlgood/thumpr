@@ -111,5 +111,6 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
+  @stories = Story.all
   erb :'users/profile'
 end

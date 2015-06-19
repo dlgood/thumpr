@@ -108,3 +108,8 @@ post '/stories/edit' do
     erb :'stories/index'
   # end
 end
+
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'users/profile'
+end

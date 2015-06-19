@@ -14,8 +14,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-main">
       <div class="nav navbar-nav navbar-left">
-        <li><a href="/stories">All Stories</a></li>
         <% if user_logged_in? %>
+          <li><a href="/stories">All Stories</a></li>
           <li><a href="/stories/new">New Story</a></li>
         <% end %>
       </div>

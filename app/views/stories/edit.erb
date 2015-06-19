@@ -1,37 +1,37 @@
 <form method="post" action="/stories/edit" id="create-story">
-<input type="hidden" name="id" value="<%= @story.id %>">
+  <input type="hidden" name="id" value="<%= @story.id %>">
   <h2>Create a new story</h2>
-    <p class="note">The fields in this first section are required</p> 
-    <div class="form-group form-inline">
-      <label>As a </label>
-      <input type="text" name="story[role]" class="form-control role" value="<%= @story.role %>">
-      <label>I should be able to </label>
-      <input type="text" name="story[goal]" class="form-control goal" value="<%= @story.goal %>">  
-    </div>
-    <div class="form-group form-inline">
-      <label>Because </label>
-      <input type="text" name="story[benefit]" class="form-control benefit" value = "<%= @story.benefit %>">
-    </div>
-    <p class="note">The following fields are optional</p>
-    <div class="form-group">
-      <label>Additional details </label>
-      <textarea name="story[fftext]" class="form-control" rows="5">
-      <%= @story.fftext %></textarea>
-    </div>
-    <div class="select-group">
-      <label>Assignee </label>
-      <select class="form-control assignee" name="story[userid]" >
-        <option disabled selected></option>
-        <% @users.each do |user| %>    
-          <option value="<%= user.id %>"><%= user.name %></option>
-        <% end %>
-      </select>
-    </div>
-    <div class="select-group">
-      <label>Priority </label>
-      <select class="form-control assignee">
-        <option disabled selected></option>
-      </select>
-    </div>
-    <input type="submit" value="Update" class="btn btn-primary btn-lg">
+  <p class="note">The fields in this first section are required</p> 
+  <div class="form-group form-inline">
+    <label>As a </label>
+    <input type="text" name="story[role]" class="form-control role" value="<%= @story.role %>">
+    <label>I should be able to </label>
+    <input type="text" name="story[goal]" class="form-control goal" value="<%= @story.goal %>">  
+  </div>
+  <div class="form-group form-inline">
+    <label>Because </label>
+    <input type="text" name="story[benefit]" class="form-control benefit" value = "<%= @story.benefit %>">
+  </div>
+  <p class="note">The following fields are optional</p>
+  <div class="form-group">
+    <label>Additional details </label>
+    <textarea name="story[fftext]" class="form-control" rows="5">
+    <%= @story.fftext %></textarea>
+  </div>
+  <div class="select-group">
+    <label>Assignee </label>
+    <select class="form-control assignee" name="story[userid]" >
+      <option disabled selected></option>
+      <% @users.each do |user| %>    
+        <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="select-group">
+    <label>Priority </label>
+    <select class="form-control assignee">
+      <option disabled selected></option>
+    </select>
+  </div>
+  <input type="submit" value="Update" class="btn btn-primary btn-lg">
 </form>

@@ -1,41 +1,39 @@
-<h1>Create a new story</h1>
-
-<form method="post" action="/stories">
-    <p>The fields in this first section are required.</p> 
-    <div class="form-group">
+<form method="post" action="/stories" id="create-story">
+  <h2>Create a new story</h2>
+    <p class="note">The fields in this first section are required</p> 
+    <div class="form-group form-inline">
       <label>As a </label>
-      <input type="text" name="role">
-    </div>
-    <div class="form-group">
+      <input type="text" name="role" class="form-control role">
       <label>I should be able to </label>
-      <input type="text" name="goal">  
+      <input type="text" name="goal" class="form-control goal">  
     </div>
-    <div class="form-group">
+    <div class="form-group form-inline">
       <label>Because </label>
-      <input type="text" name="benefit">
+      <input type="text" name="benefit" class="form-control benefit">
     </div>
-    <hr>
-    <p>The following fields are optional</p>
+    <p class="note">The following fields are optional</p>
     <div class="form-group">
       <label>Additional details </label>
-      <textarea name = "fftext" rows = "7" cols = "40">
-        (start state) Given 
-        (actor action) When I 
-        (system feedback) The system
-        (acceptance criteria) We will know this is done when we can
-      </textarea> 
+      <textarea name="fftext" class="form-control" rows="5">
+      (start state) Given 
+      (actor action) When I 
+      (system feedback) The system
+      (acceptance criteria) We will know this is done when we can</textarea>
     </div>
-    <div class="form-group">
+    <div class="select-group">
       <label>Assignee </label>
-      <select>
+      <select class="form-control assignee">
+        <option disabled selected></option>
         <% @users.each do |user| %>    
           <option value="<%= user.id %>"><%= user.name %></option>
         <% end %>
       </select>
     </div>
-    <div class="form-group">
+    <div class="select-group">
       <label>Priority </label>
-      <input type="text" name="priority">  
+      <select class="form-control assignee">
+        <option disabled selected></option>
+      </select>
     </div>
-    <input type="submit" value="Create">
+    <input type="submit" value="Create" class="btn btn-primary btn-lg">
 </form>

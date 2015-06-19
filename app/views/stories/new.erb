@@ -1,7 +1,6 @@
 <div class="row">
   <form method="post" action="/stories" class="form-horizontal col-md-offset-3 col-md-6" id="create-stories">
     <h2 class="center">Write a new story</h2>
-      <p class="center grey">The fields in this first section are required</p> 
       <div class="form-group">
         <label class="col-sm-3 control-label">As a </label>
         <div class="col-sm-9">
@@ -20,7 +19,7 @@
           <input type="text" name="benefit" class="form-control">
         </div>
       </div>
-      <p class="center grey">The following fields are optional</p>
+      <p class="grey col-sm-9 col-sm-offset-3">The following fields are optional</p>
       <div class="form-group">
         <label class="col-sm-3 control-label">Additional details </label>
         <div class="col-sm-9">
@@ -33,7 +32,7 @@
       </div>
       <div class="form-group">
         <label class="col-sm-3 control-label">Assignee </label>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <select class="form-control" name="userid" >
             <option disabled selected></option>
             <% @users.each do |user| %>    
@@ -41,15 +40,20 @@
             <% end %>
           </select>
         </div>
-        <label class="col-sm-1 control-label">Priority </label>
-        <div class="col-sm-2">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Priority </label>
+        <div class="col-sm-1">
           <select class="form-control">
             <option disabled selected></option>
           </select>
         </div>
-        <div class="col-sm-4">
+      </div>
+      <div class="form-group">
+        <div class="col-sm-3 col-sm-offset-9">
           <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block">
         </div>
       </div>
+    </div>
   </form>
 </div>

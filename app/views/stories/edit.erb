@@ -1,7 +1,12 @@
 <div class = "row">
   <form method="POST" action="/stories/<%= @story.id if @story %>" id="create-stories" class="form-horizontal col-md-offset-3 col-md-6">
-  <h2 class="center">Edit Story</h2>
-  <input type="hidden" name="_form" value="<%= @story.id %>">
-    <%= erb :"stories/_form" %>
+    <h2 class="center">Edit Story</h2>
+    <input type="hidden" name="_form" value="<%= @story.id %>">
+      <%= erb :"stories/_form" %>
+    <div class="form-group">
+      <div class="col-sm-3 col-sm-offset-9">
+        <input type="submit" value="Update" class="btn btn-primary btn-lg btn-block">
+      </div>
+    </div>
   </form>
 </div>

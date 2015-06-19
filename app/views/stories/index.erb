@@ -24,18 +24,23 @@
             <%= stories.id %>
           </td>
           <td>
-            <%= stories.role %> should be able to <%= stories.goal.downcase %>
+            <a href="/stories/edit/<%= stories.id %>"><%= stories.role %> should be able to <%= stories.goal.downcase %></a>
           </td>
           <td>
-            <%= stories.user.name %>
+            <a href="/users/<%= stories.user_id %>"><%= stories.user.name %></a>
           </td>
           <td>
-            <%= stories.assignee.name %>
+            <a href="/users/<%= stories.assignee_id %>"><%= stories.assignee.name %></a>
           </td>
         </tr>
         <% end %>
       </table>
     </div>
+    <p>team members</p>
+    <% @team.each do |team_member| %>
+      <%= team_member.name  %>
+    <% end %>
+
   </div>
 <div>
 

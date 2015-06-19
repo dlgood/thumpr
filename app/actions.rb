@@ -55,7 +55,8 @@ end
 
 get '/' do
   if user_logged_in?
-    @stories = Story.all
+    @stories = Story.where(team_id: get_current_user.team_id).all
+    @team = User.where(team_id: get_current_user.team_id).all
     erb :'stories/index'
   else
     erb :'session/new'
@@ -63,7 +64,8 @@ get '/' do
 end
 
 get '/stories' do
-  @stories = Story.all
+  @stories = Story.where(team_id: get_current_user.team_id).all
+  @team = User.where(id: get_current_user.team_id).all
   erb :'stories/index'
 end
 

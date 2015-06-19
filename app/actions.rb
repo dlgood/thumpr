@@ -92,21 +92,16 @@ post '/stories' do
   end
 end
 
-get '/stories/edit/:id' do
-  @story = Story.find params[:id]
+get '/stories/:id/edit' do
+  @story = Story.find (params[:id])
   get_all_users
   erb :'stories/edit'
 end  
 
-post '/stories/edit' do 
+post '/stories/:id' do 
   @story = Story.find(params[:id]).update_attributes(params[:story])
-  # if @story.save
-  #   redirect '/stories'
-  #   #should add callout to top of all stories saying story saved successfully
-  # else
-    @stories = Story.all
-    erb :'stories/index'
-  # end
+  @stories = Story.all
+  erb :'stories/index'
 end
 
 get '/users/:id' do

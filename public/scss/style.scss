@@ -33,3 +33,56 @@ body, html {
     margin: 40px 0;
   }
 }
+#user-profile {
+  background-color: #2C3E50;;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 50px;
+
+  img {
+    border-radius: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+.user-info {
+  color: #eee;
+  height: 100%;
+  text-align: center;
+}
+.story-group {
+  margin: 20px 0;
+
+  header {
+    border-radius: 7px 7px 0 0;
+    font-size: 1.5em;
+    color: #34495E;
+    background-color: #1ABC9C;
+    padding: 5px 10px;
+  }
+  a {
+    display: block;
+    padding: 5px 10px;
+    background-color: white;
+
+    &:hover{
+      color: #1ABC9C;
+    }
+    &:last-of-type {
+      border-radius: 0 0 7px 7px;
+    }
+  }
+}
+.stories {
+  background-color: #34495E;
+}

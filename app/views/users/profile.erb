@@ -1,17 +1,27 @@
-
-Name: <%= @user.name %><br />
-Team Name: <%= @user.team.team_name %><br />
-Member Since: <%= @user.created_at.to_s(:long) %><br />
-
-My Stories:
-<% @user.stories.each do |story| %>
-  <p><a href="/stories/edit/<%= story.id %>"><%= story.role %> should be able to <%= story.goal.downcase %></a></p>
-<% end %>
-
-Completed Stories: <br /><br /> 
-
-Stories Assigned To Me: 
-
-<% @stories.where(assignee: @user.id).each do |assigned_story| %>
-  <p><a href="/stories/edit/<%= assigned_story.id %>"><%= assigned_story.role %> should be able to <%= assigned_story.goal.downcase %></a></p>
-<% end %>
+<div id="user-profile" class="col-sm-6 col-sm-offset-3">
+  <div class="row">
+    <div class="user-info col-sm-3">
+      <img src="https://www.libstash.com/public/avatars/default.png">
+      <h2><%= @user.name %></h2>
+      <h3><%= @user.team.team_name %></h3>
+      <p class="grey"><%= @user.created_at.to_s(:long) %></p>
+    </div>
+    <div class="col-sm-9 stories">
+      <div class="story-group">
+        <header>Written Stories</header>
+        <% @user.stories.each do |story| %>
+          <a href="/stories/edit/<%= story.id %>"><%= story.role %> should be able to <%= story.goal.downcase %></a>
+      <% end %>
+      </div>
+      <div class="story-group">
+        <header>Assigned Stories</header>
+        <% @stories.where(assignee: @user.id).each do |assigned_story| %>
+          <a href="/stories/edit/<%= assigned_story.id %>"><%= assigned_story.role %> should be able to <%= assigned_story.goal.downcase %></a>
+        <% end %>
+      </div>
+      <div class="story-group">
+        <header>Completed Stories</header>
+      </div>
+    </div>
+  </div>
+</div>

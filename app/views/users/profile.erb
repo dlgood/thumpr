@@ -1,4 +1,16 @@
 
-<%= @user.name %>
-<% @user.team.name %> 
+Name: <%= @user.name %><br />
+Team Name: <%= @user.team.team_name %><br />
+Member Since: <%= @user.created_at.to_s(:long) %><br />
+
+Stories:
+<% @user.stories.each do |story| %>
+  <p><%= story.role %> should be able to <%= story.goal.downcase %></p>
+<% end %>
+
+Completed Stories:
+
+
+
+
 

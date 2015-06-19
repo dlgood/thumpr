@@ -75,12 +75,14 @@ end
 
 post '/stories' do 
   @story = Story.new(
-    role:     params[:role],
-    goal:     params[:goal],
-    benefit:  params[:benefit],
-    fftext:   params[:fftext],
-    # assignee: params[:assignee],
-    priority: params[:priority]
+    role:         params[:role],
+    user_id:      get_current_user.id,
+    goal:         params[:goal],
+    benefit:      params[:benefit],
+    fftext:       params[:fftext],
+    assignee_id:  params[:userid],
+    priority:     params[:priority],
+    team_id:      get_current_user.team_id
   )
   if @story.save
     redirect '/stories'

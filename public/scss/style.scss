@@ -37,8 +37,35 @@ body, html {
     float : right;
   }
 }
+.container-dark {
+  background-color: #2C3E50;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 50px;
+  padding: 20px;
+
+  h1 {
+    color: white;
+    margin: 0 20px 20px 20px;
+  }
+}
+.story-row {
+  display: block;
+  padding: 10px 10px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  transition: 0.25s ease-in-out;
+
+  &:hover{
+    color: #1ABC9C;
+    background-color: #f4f9f8;
+  }
+  &:last-of-type {
+    border-radius: 0 0 7px 7px;
+  }
+}
 #user-profile {
-  background-color: #2C3E50;;
+  background-color: #2C3E50;
   border-radius: 7px;
   overflow: hidden;
   margin-top: 50px;
@@ -66,30 +93,17 @@ body, html {
 }
 .story-group {
   margin: 20px 0;
-
-  header {
-    border-radius: 7px 7px 0 0;
-    font-size: 1.5em;
-    color: #34495E;
-    background-color: #1ABC9C;
-    padding: 5px 10px;
-  }
-  a {
-    display: block;
-    padding: 5px 10px;
-    background-color: white;
-
-    &:hover{
-      color: #1ABC9C;
-    }
-    &:last-of-type {
-      border-radius: 0 0 7px 7px;
-    }
-  }
 }
 .stories {
   background-color: #34495E;
 }
 .float-right {
   float: right;
+}
+header {
+  border-radius: 7px 7px 0 0;
+  font-size: 1.5em;
+  color: #34495E;
+  background-color: #1ABC9C;
+  padding: 5px 10px;
 }

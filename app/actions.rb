@@ -9,6 +9,10 @@ helpers do
     end
   end
 
+  def get_current_team
+    Team.find(get_current_user.team_id)
+  end
+
   def get_all_users
     @users = User.all
   end
@@ -80,15 +84,12 @@ get '/stories/new' do
 end  
 
 post '/stories' do 
-  @story = Story.new(params[:story], 
-    user_id:      get_current_user.id,
-    team_id:      get_current_user.team_id
-  )
+  @story = Story.new(params[:story])
   if @story.save
     redirect '/stories'
     #should add callout to top of all stories saying story saved successfully
   else
-    erb :'stories/new'
+    redirect '/stories/new'
   end
 end
 

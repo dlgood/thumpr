@@ -8,14 +8,14 @@
 <div class="form-group">
   <label class="col-sm-3 control-label">I should be able to </label>
   <div class="col-sm-9">
-    <input type="text" name="goal" class="form-control" value="<%= @story.goal if @story %>">
+    <input type="text" name="story[goal]" class="form-control" value="<%= @story.goal if @story %>">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-sm-3 control-label">Because </label>
   <div class="col-sm-9">
-    <input type="text" name="benefit" class="form-control" value = "<%= @story.benefit if @story %>">
+    <input type="text" name="story[benefit]" class="form-control" value = "<%= @story.benefit if @story %>">
   </div>
 </div>
 
@@ -24,7 +24,7 @@
 <div class="form-group">
   <label class="col-sm-3 control-label">Additional details </label>
   <div class="col-sm-9">
-    <textarea name="fftext" class="form-control" rows="5">
+    <textarea name="story[fftext]" class="form-control" rows="5">
       <%= @story.fftext if @story %>
     </textarea>
   </div>
@@ -38,7 +38,7 @@
         <% @users.each do |user| %>    
       <option value="<%= user.id %>"><%= user.name %></option>
         <% end %>
-    </select>
+    </select>  
   </div>
 </div>
 

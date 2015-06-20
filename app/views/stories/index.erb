@@ -24,7 +24,7 @@
             <%= stories.id %>
           </td>
           <td>
-            <a href="/stories/edit/<%= stories.id %>"><%= stories.role %> should be able to <%= stories.goal.downcase %></a>
+            <a href="/stories/<%= stories.id %>/edit"><%= stories.role %> should be able to <%= stories.goal.downcase %></a>
           </td>
           <td>
             <a href="/users/<%= stories.user_id %>"><%= stories.user.name %></a>

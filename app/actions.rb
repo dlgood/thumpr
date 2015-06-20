@@ -80,14 +80,8 @@ get '/stories/new' do
 end  
 
 post '/stories' do 
-  @story = Story.new(
-    role:         params[:role],
+  @story = Story.new(params[:story], 
     user_id:      get_current_user.id,
-    goal:         params[:goal],
-    benefit:      params[:benefit],
-    fftext:       params[:fftext],
-    assignee_id:  params[:userid].to_i,
-    priority:     params[:priority],
     team_id:      get_current_user.team_id
   )
   if @story.save
@@ -99,8 +93,8 @@ post '/stories' do
 end
 
 get '/stories/:id/edit' do
-  @story = Story.find (params[:id])
   get_all_users
+  @story = Story.find (params[:id])
   erb :'stories/edit'
 end  
 

@@ -9,6 +9,10 @@ helpers do
     end
   end
 
+  def get_current_team
+    Team.find(get_current_user.team_id)
+  end
+
   def get_all_users
     @users = User.all
   end

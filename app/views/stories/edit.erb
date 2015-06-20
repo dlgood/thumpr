@@ -23,7 +23,11 @@
     <select class="form-control assignee" name="story[assignee_id]" >
       <option disabled selected></option>
       <% @users.each do |user| %>    
-        <option value="<%= user.id %>"><%= user.name %></option>
+        <% if user.id == @story.assignee_id %>
+          <option value="<%= user.id %>" selected><%= user.name %></option>
+        <% else %>
+          <option value="<%= user.id %>"><%= user.name %></option>
+        <% end %>
       <% end %>
     </select>
   </div>

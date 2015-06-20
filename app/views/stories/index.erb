@@ -1,46 +1,23 @@
-<div class = "wrapper">
-  <div class = "main">
-    <h1>All Stories</h1>
-    <div class="stories-list">
-      <table width = 100% class="table table-striped">
-        <tr>
-          <th>
-            ID
-          </th>
-          <th>
-            Summary
-          </th>
-          <th>
-            Creator
-          </th>
-          <th>
-            Assignee
-          </th>
-        </tr>
-        <% @stories.each do |stories| %>
-        <% # Need to filter out completed and invisible %>
-        <tr>
-          <td>
-            <%= stories.id %>
-          </td>
-          <td>
-            <a href="/stories/<%= stories.id %>/edit"><%= stories.role %> should be able to <%= stories.goal.downcase %></a>
-          </td>
-          <td>
-            <a href="/users/<%= stories.user_id %>"><%= stories.user.name %></a>
-          </td>
-          <td>
-            <a href="/users/<%= stories.assignee_id %>"><%= stories.assignee.name %></a>
-          </td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
-    <p>team members</p>
-    <% @team.each do |team_member| %>
-      <%= team_member.name  %>
-    <% end %>
+<!-- <p>team members</p>
+<% @team.each do |team_member| %>
+  <%= team_member.name  %>
+<% end %> -->
 
+<div class="col-sm-8 col-sm-offset-2">
+  <div class="row">
+    <div class="col-sm-1">ID</div>
+    <div class="col-sm-6">Title</div>
+    <div class="col-sm-2">Creator</div>
+    <div class="col-sm-2">Assignee</div>
+    <div class="col-sm-1">Priority</div>
   </div>
-<div>
-
+  <% @stories.each do |story| %>
+    <div class="row">
+      <div class="col-sm-1"><%= story.id %></div>
+      <div class="col-sm-6"><%= story.role %> should be able to <%= story.goal.downcase %></div>
+      <div class="col-sm-2"><%= story.user.name %></div>
+      <div class="col-sm-2"><%= story.assignee.name %></div>
+      <div class="col-sm-1"><%= story.priority %></div>
+    </div>
+  <% end %>
+</div>

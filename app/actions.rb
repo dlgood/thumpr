@@ -14,6 +14,14 @@ helpers do
   end
 end
 
+get '/' do
+  if user_logged_in?
+    redirect '/stories'
+  else
+    redirect '/session/new'
+  end
+end
+
 get '/session/new' do 
   erb :'session/new'
 end
@@ -59,12 +67,25 @@ get '/users/:id' do
   erb :'users/profile'
 end
 
-get '/' do
-  if user_logged_in?
-    redirect '/stories'
+get '/users/:id/photo' do
+  if get_current_user == User.find(params[:id])
+    @user = get_current_user
+    erb :'users/photo'
   else
-    redirect '/session/new'
+    @user = User.find(params[:id])
+    @stories = Story.all
+    erb :'users/profile'
   end
+end
+
+post '/users/:id/photo' do
+  @user = get_current_user
+  @user.file = params[:file]
+  @user.file.resize_to_fill(200, 200)
+  @user.save! 
+
+  @stories = Story.all
+  erb :'/users/profile'
 end
 
 get '/stories' do
@@ -107,19 +128,4 @@ end
 post '/stories/edit' do 
   @story = Story.find(params[:id]).update_attributes(params[:story])
   redirect '/stories'
-end
-
-get '/users/:id/photo' do
-  @user = get_current_user
-  erb :'users/photo'
-end
-
-post '/users/:id/photo' do
-  @user = get_current_user
-  @user.file = params[:file]
-  @user.file.resize_to_fill(200, 200)
-  @user.save! 
-
-  @stories = Story.all
-  erb :'/users/profile'
 end

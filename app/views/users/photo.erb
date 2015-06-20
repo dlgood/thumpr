@@ -1,0 +1,10 @@
+<% if @user.file %>
+  <img src="<%= @user.file %>">
+<% else %>
+  <img src="https://www.libstash.com/public/avatars/default.png">
+<% end %>
+
+<form action="/users/<%= @user.id %>/photo" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" accept="image/*">
+  <input type="submit">
+</form>

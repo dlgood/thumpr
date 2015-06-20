@@ -47,7 +47,14 @@ body, html {
     border-radius: 100%;
     width: 100%;
     padding: 20px;
+
+    .thumb {
+      border-radius: 100%;
+      height: 75px;
+      width: 75px;
+    }
   }
+
   h2 {
     font-size: 1.5em;
     margin-top: 0;

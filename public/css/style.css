@@ -39,6 +39,10 @@ body, html {
     border-radius: 100%;
     width: 100%;
     padding: 20px; }
+    #user-profile img .thumb {
+      border-radius: 100%;
+      height: 75px;
+      width: 75px; }
   #user-profile h2 {
     font-size: 1.5em;
     margin-top: 0; }

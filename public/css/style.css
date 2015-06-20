@@ -6,6 +6,10 @@ body, html {
 
 .navbar {
   border-radius: 0; }
+  .navbar img {
+    height: 23px;
+    border-radius: 100%;
+    margin: 0 10px; }
 
 .login-form {
   margin: 50px auto 0 auto;
@@ -77,12 +81,6 @@ body, html {
 
 .story-group {
   margin: 20px 0; }
-  .story-group header {
-    border-radius: 7px 7px 0 0;
-    font-size: 1.5em;
-    color: #34495E;
-    background-color: #1ABC9C;
-    padding: 5px 10px; }
   .story-group a {
     display: block;
     padding: 5px 10px;
@@ -119,4 +117,9 @@ body, html {
 .clear-both {
   clear: both; }
 
-/*# sourceMappingURL=style.css.map */
+header {
+  border-radius: 7px 7px 0 0;
+  font-size: 1.5em;
+  color: #34495E;
+  background-color: #1ABC9C;
+  padding: 5px 10px; }

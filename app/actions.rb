@@ -13,6 +13,15 @@ helpers do
     Team.find(get_current_user.team_id)
   end
 
+  def get_user_img
+    user = get_current_user
+    if user.file.file
+      user.file
+    else
+      "https://www.libstash.com/public/avatars/default.png"
+    end
+  end
+
   def get_all_users
     @users = User.all
   end

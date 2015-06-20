@@ -1,8 +1,8 @@
 <div id="user-profile" class="col-sm-6 col-sm-offset-3">
   <div class="row">
     <div class="user-info col-sm-3">
-      <% if @user.file %>
-        <a href="/users/<%= @user.id %>/photo"><img src="<%= @user.file  %>"></a>
+      <% if @user.file.file %>
+        <a href="/users/<%= @user.id %>/photo"><img src="<%= @user.file %>"></a>
       <% else %>
         <a href="/users/<%= @user.id %>/photo"><img src="https://www.libstash.com/public/avatars/default.png"></a>
       <% end %>

@@ -6,6 +6,10 @@ body, html {
 
 .navbar {
   border-radius: 0; }
+  .navbar img {
+    height: 23px;
+    border-radius: 100%;
+    margin: 0 10px; }
 
 .login-form {
   margin: 50px auto 0 auto;

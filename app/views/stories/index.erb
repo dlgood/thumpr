@@ -1,48 +1,27 @@
-<%= flash[:notice] = 'Your story was successfully created' %>
+<!-- <p>team members</p>
+<% @team.each do |team_member| %>
+  <%= team_member.name  %>
+<% end %> -->
 
-<div class = "wrapper">
-  <div class = "main">
-    <h1>All Stories</h1>
-    <div class="stories-list">
-      <table width = 100% class="table table-striped">
-        <tr>
-          <th>
-            ID
-          </th>
-          <th>
-            Summary
-          </th>
-          <th>
-            Creator
-          </th>
-          <th>
-            Assignee
-          </th>
-        </tr>
-        <% @stories.each do |stories| %>
-        <% # Need to filter out completed and invisible %>
-        <tr>
-          <td>
-            <%= stories.id %>
-          </td>
-          <td>
-            <a href="/stories/<%= stories.id %>/edit"><%= stories.role %> should be able to <%= stories.goal.downcase %></a>
-          </td>
-          <td>
-            <a href="/users/<%= stories.user_id %>"><%= stories.user.name %></a>
-          </td>
-          <td>
-            <a href="/users/<%= stories.assignee_id %>"><%= stories.assignee.name %></a>
-          </td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
-    <p>team members</p>
-    <% @team.each do |team_member| %>
-      <%= team_member.name  %>
+<div class="container-dark col-sm-8 col-sm-offset-2">
+  <h1>All Stories</h1>
+
+  <div class="col-sm-12" id="story-table">
+    <header class="row">
+      <div class="col-sm-1">ID</div>
+      <div class="col-sm-6">Title</div>
+      <div class="col-sm-2">Creator</div>
+      <div class="col-sm-2">Assignee</div>
+      <div class="col-sm-1">Priority</div>
+    </header>
+    <% @stories.each do |story| %>
+      <div class="row story-row">
+        <div class="col-sm-1"><a href="/stories/<%= story.id %>/edit"><%= story.id %></a></div>
+        <div class="col-sm-6"><a href="/stories/<%= story.id %>/edit"><%= story.role %> should be able to <%= story.goal.downcase %></a></div>
+        <div class="col-sm-2"><a href="/users/<%= story.user.id %>"><%= story.user.name %></a></div>
+        <div class="col-sm-2"><a href="/users/<%= story.assignee.id %>"><%= story.assignee.name %></a></div>
+        <div class="col-sm-1"><a href="/stories/<%= story.id %>/edit"><%= story.priority %></a></div>
+      </div>
     <% end %>
-
   </div>
-<div>
-
+</div>

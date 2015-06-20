@@ -10,6 +10,12 @@ require 'sinatra/contrib/all' # Requires cookies, among other things
 
 require 'pry'
 
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+require 'mini_magick'
+
+require_relative '../uploader/uploader'
+
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
@@ -29,3 +35,7 @@ require APP_ROOT.join('config', 'database')
 
 # Load the routes / actions
 require APP_ROOT.join('app', 'actions')
+
+CarrierWave.configure do |config|
+  config.root = APP_ROOT + 'public/'
+end

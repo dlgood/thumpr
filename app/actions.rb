@@ -103,3 +103,17 @@ post '/stories/edit' do
   redirect '/stories'
 end
 
+get '/users/:id/photo' do
+  @user = get_current_user
+  erb :'users/photo'
+end
+
+post '/users/:id/photo' do
+  @user = get_current_user
+  @user.file = params[:file]
+  @user.file.resize_to_fill(200, 200)
+  @user.save! 
+
+  @stories = Story.all
+  erb :'/users/profile'
+end

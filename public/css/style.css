@@ -26,7 +26,8 @@ body, html {
   border-radius: 7px;
   padding: 0 50px 30px 0; }
   #create-stories h2 {
-    margin: 40px 0; }
+    float: left;
+    margin: 70px 0 0 40px; }
   #create-stories .story-details {
     float: right; }
 
@@ -72,7 +73,31 @@ body, html {
 .stories {
   background-color: #34495E; }
 
-.float-right {
-  float: right; }
+.story-details {
+  margin: 20px 0 0 0;
+  padding: 0px; }
+  .story-details header {
+    font-size: 1em;
+    font-variant: small-caps;
+    padding-left: 1em; }
+  .story-details .details-items {
+    border: 1px solid #CCC;
+    padding: .5em;
+    background-color: white;
+    border-radius: 0 0 .5em .5em; }
+  .story-details ul {
+    list-style-type: none;
+    padding-left: 4em; }
+  .story-details li {
+    font-size: .75em; }
+  .story-details .thumb {
+    float: left;
+    margin: 6px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%; }
+
+.clear-both {
+  clear: both; }
 
 /*# sourceMappingURL=style.css.map */

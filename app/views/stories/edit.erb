@@ -5,12 +5,17 @@
     </div> 
     <div class = "col-md-6 story-group story-details">
       <div class = "story-group">
-        <header class = "details">Story #<%= @story.id %> details</header>
-        <ul>
-          <li>Created by: <%= @story.user.name %></li>
-          <li>Updated at: <%= @story.updated_at %></li>
-          <li>Created at: <%= @story.created_at %></li>
-        </ul>
+        <header>Story #<%= @story.id %> details</header>
+        <div class = "thumb">
+          <img src="https://www.libstash.com/public/avatars/default.png" class = "thumb" />
+        </div> 
+        <div class = "details-items">
+          <ul>
+            <li>Created by: <%= @story.user.name %></li>
+            <li>Updated at: <%= @story.updated_at %></li>
+            <li>Created at: <%= @story.created_at %></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class = "clear-both"></div>

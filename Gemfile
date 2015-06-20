@@ -7,12 +7,18 @@ gem 'activesupport'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
+gem 'sinatra-flash'
+# gem 'rack-flash'
+# gem 'sinatra-redirect-with-flash'
+
 
 gem 'puma'
 gem 'tux'
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+
 
 group :development, :test do
   gem 'pry'

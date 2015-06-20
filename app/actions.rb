@@ -85,6 +85,7 @@ post '/stories' do
     team_id:      get_current_user.team_id
   )
   if @story.save
+    flash[:notice] = 'Your story was successfully created'
     redirect '/stories'
     #should add callout to top of all stories saying story saved successfully
   else

@@ -25,6 +25,10 @@ helpers do
   def get_all_users
     @users = User.all
   end
+
+  def get_team_users
+    User.where(team_id: get_current_user.team_id)
+  end
 end
 
 get '/' do

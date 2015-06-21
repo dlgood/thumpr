@@ -3,7 +3,7 @@
   <%= team_member.name  %>
 <% end %> -->
 
-<div class="container-dark col-sm-8 col-sm-offset-2">
+<div class="container-dark col-sm-8 col-sm-offset-1">
   <h1>All Stories</h1>
 
   <div class="col-sm-12" id="story-table">
@@ -12,7 +12,7 @@
       <div class="col-sm-6">Title</div>
       <div class="col-sm-2">Creator</div>
       <div class="col-sm-2">Assignee</div>
-      <div class="col-sm-1">Priority</div>
+      <div class="col-sm-1"><span class="fui-alert-circle"></span></div>
     </header>
     <% @stories.each do |story| %>
       <div class="row story-row">
@@ -20,8 +20,9 @@
         <div class="col-sm-6"><a href="/stories/<%= story.id %>/edit"><%= story.role %> should be able to <%= story.goal.downcase %></a></div>
         <div class="col-sm-2"><a href="/users/<%= story.user.id %>"><%= story.user.name %></a></div>
         <div class="col-sm-2"><a href="/users/<%= story.assignee.id if story.assignee %>"><%= story.assignee.name if story.assignee %></a></div>
-        <div class="col-sm-1"><a href="/stories/<%= story.id %>/edit"><%= story.priority %></a></div>
+        <div class="col-sm-1"><a href="/stories/<%= story.id %>/edit">  <%= story.priority %></a></div>
       </div>
     <% end %>
   </div>
 </div>
+<%= erb :'/users/_sidebar' %>

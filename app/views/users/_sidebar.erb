@@ -1,10 +1,14 @@
-<div class="sidebar col-sm-2 col-sm-offset-1">
-  <div class="row">
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-6">
-    </div>
-    <div class="col-sm-3">
+<div class="container col-sm-2">
+  <div class="sidebar">
+    <h1>Members</h1>
+    <div class="members-list">
+      <% get_team_users.each do |user| %>
+        <a href="/users/<%= user.id %>" class="member-row">
+          <img src="<%= user.file %>">
+          <p><%= user.name %></p>
+          <p><%= Story.where(assignee_id: user.id).count %></p>
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,13 +1,15 @@
 <div class="row">
-  <form method="POST" action="/stories" id="create-stories" class="form-horizontal col-md-offset-3 col-md-6">
+  <form method="POST" action="/stories" id="create-stories" class="form-horizontal col-md-offset-3 col-md-6 container-dark">
     <input type="hidden" name="story[user_id]" value="<%= get_current_user.id %>">
     <input type="hidden" name="story[team_id]" value="<%= get_current_user.team_id %>">
-    <h2 class="center">Write Story</h2>
-    <div class = "clear-both"></div> 
-    <%= erb :"stories/_form" %>
-    <div class="form-group">
-      <div class="col-sm-3 col-sm-offset-9">
-        <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">
+    <div>
+      <h2 class="center">Write Story</h2>
+      <div class = "clear-both"></div> 
+      <%= erb :"stories/_form" %>
+      <div class="form-group">
+        <div class="col-sm-3 col-sm-offset-9">
+          <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">
+        </div>
       </div>
     </div>  
   </form>

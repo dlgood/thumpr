@@ -119,4 +119,16 @@ body, html {
 .clear-both {
   clear: both; }
 
+header {
+  border-radius: 7px 7px 0 0;
+  font-size: 1.5em;
+  color: #34495E;
+  background-color: #1ABC9C;
+  padding: 5px 10px; }
+
+.custom-alert {
+  width: 70%;
+  border-radius: 7px;
+  margin: 0 auto; }
+
 /*# sourceMappingURL=style.css.map */

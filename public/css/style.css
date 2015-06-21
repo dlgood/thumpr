@@ -25,13 +25,13 @@ body, html {
   color: #bdc3c7; }
 
 #create-stories {
-  margin-top: 50px;
+  margin-top: 10px;
   background-color: #edeff1;
   border-radius: 7px;
   padding: 0 50px 30px 0; }
   #create-stories h2 {
     float: left;
-    margin: 70px 0 70px 40px; }
+    margin: 60px 0 40px 40px; }
   #create-stories .story-details {
     float: right; }
 

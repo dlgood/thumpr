@@ -36,11 +36,11 @@
     <select class="form-control" name="story[assignee_id]" >
       <option disabled selected></option>
       <% @users.each do |user| %>    
-        <% if user.id == @story.assignee_id %>
-          <option value="<%= user.id %>" selected><%= user.name %></option>
-        <% else %>
-          <option value="<%= user.id %>"><%= user.name %></option>
-        <% end %>
+      <% if user.id == @story.assignee_id %>
+      <option value="<%= user.id %>" selected><%= user.name %></option>
+      <% else %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
       <% end %>
     </select>  
   </div>
@@ -48,9 +48,16 @@
 
 <div class="form-group">
   <label class="col-sm-3 control-label">Priority </label>
-  <div class="col-sm-1">
-    <select class="form-control">
+  <div class="col-sm-2">
+    <select class="form-control" name="story[priority]">
       <option disabled selected></option>
+      <% [1,2,3,4,5].each do |num| %>
+      <% if num == @story.priority %>
+      <option value="<%= num %>" selected><%= num %></option>
+      <% else %>
+      <option value="<%= num %>"><%= num %></option>
+      <% end %>
+      <% end %> 
     </select>
   </div>
 </div>

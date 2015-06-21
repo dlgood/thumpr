@@ -50,6 +50,7 @@ post '/session/new' do
     session[:email] = @user.email
     redirect '/'
   else
+    flash[:error] = 'We don\'t recognize you. Please try again.'
     erb :'session/new'
   end
 end

@@ -12,7 +12,7 @@
           </div> 
           <div class = "details-items">
             <ul>
-              <li>Created by: <%= @story.user.name %></li>
+              <li>Created by: <a href="/users/<%= @story.user.id %>"><%= @story.user.name %></a></li>
               <li>Created on: <%= @story.created_at.strftime("%m-%d-%Y%l:%M %p") %></li>
               <% if @story.updated_at > @story.created_at %>
                 <li>Updated on: <%= @story.updated_at.strftime("%m-%d-%Y%l:%M %p") %></li>

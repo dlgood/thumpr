@@ -30,11 +30,19 @@
       </div>
     </div>
   </nav>
-
   <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %>
+    <div id='flash' class='alert alert-success custom-alert'>
+      <%= flash[:notice] %>
+    </div>
+    <% elsif flash[:error] %>
+    <div id='flash' class='alert alert-danger custom-alert'>
+      <%= flash[:error] %>
+    </div>
+
+
   <% end %>
-    
+
+
 
   <%= yield %>
 

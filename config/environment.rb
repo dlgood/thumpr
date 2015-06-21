@@ -7,9 +7,8 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
+
 require 'sinatra/flash'
-# require 'rack-flash'
-# require 'sinatra/redirect_with_flash'
  
 require 'pry'
 
@@ -26,15 +25,13 @@ APP_NAME = APP_ROOT.basename.to_s
 configure do
   set :root, APP_ROOT.to_path
   set :server, :puma
-
+  # Part of rack-flash and sinatra flash feature
+  # use Rack::Flash
   enable :sessions
   set :session_secret, ENV['SESSION_KEY'] || 'lighthouselabssecret'
 
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
-
-# Part of rack-flash and sinatra flash feature
-# use Rack::Flash, :sweep => true
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')

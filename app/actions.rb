@@ -116,10 +116,10 @@ end
 post '/stories' do 
   @story = Story.new(params[:story])
   if @story.save
-    flash[:notice] = 'Your story was successfully created'
+    flash[:notice] = 'Your story was successfully created. Nice writin\'!'
     redirect '/stories'
-    #should add callout to top of all stories saying story saved successfully
   else
+    flash[:error] = 'There was a problem with your story. Please try again.'
     redirect '/stories/new'
   end
 end
@@ -132,5 +132,6 @@ end
 
 post '/stories/edit' do 
   @story = Story.find(params[:id]).update_attributes(params[:story])
+  flash[:notice] = 'Your story was successfully updated. Good edits!'
   redirect '/stories'
 end

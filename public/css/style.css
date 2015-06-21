@@ -123,3 +123,10 @@ header {
   color: #34495E;
   background-color: #1ABC9C;
   padding: 5px 10px; }
+
+.custom-alert {
+  width: 70%;
+  border-radius: 7px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map */

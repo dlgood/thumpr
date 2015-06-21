@@ -21,6 +21,9 @@
       </div>
       <div class="story-group">
         <header>Completed Stories</header>
+         <% @stories.where(team_id: @user.team_id).where(completed: true).each do |completed_story| %>
+          <a href="/stories/<%= completed_story.id %>/edit" class="story-row"><%= completed_story.role %> should be able to <%= completed_story.goal.downcase %><span class="fui-arrow-right float-right"></span></a>
+         <% end %>
       </div>
     </div>
   </div>

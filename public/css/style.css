@@ -43,7 +43,8 @@ body, html {
   padding: 20px; }
   .container-dark h1 {
     color: white;
-    margin: 0 20px 20px 20px; }
+    margin: 0 20px 20px 20px;
+    font-size: 2.5em; }
 
 .story-row {
   display: block;
@@ -114,6 +115,9 @@ body, html {
     width: 60px;
     border-radius: 100%; }
 
+.stories {
+  background-color: #34495E; }
+
 .clear-both {
   clear: both; }
 
@@ -129,4 +133,38 @@ header {
   border-radius: 7px;
   margin: 0 auto; }
 
-/*# sourceMappingURL=style.css.map */
+.float-right {
+  float: right; }
+
+.sidebar {
+  margin: 50px 0 0 0;
+  padding: 20px;
+  background-color: #2C3E50;
+  border-radius: 7px; }
+  .sidebar h1 {
+    color: white;
+    font-size: 2.5em;
+    margin: 0 20px 20px 20px; }
+
+.member-row {
+  overflow: hidden;
+  display: block;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: 0.25s ease-in-out; }
+  .member-row:hover {
+    color: #1ABC9C;
+    background-color: #f4f9f8; }
+  .member-row img {
+    width: 30px;
+    border-radius: 25px;
+    float: left; }
+  .member-row p {
+    display: block;
+    float: left;
+    margin: 0 0 0 20px; }
+
+.members-list {
+  border-radius: 7px;
+  overflow: hidden; }

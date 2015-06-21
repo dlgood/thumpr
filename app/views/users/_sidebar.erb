@@ -4,9 +4,13 @@
     <div class="members-list">
       <% get_team_users.each do |user| %>
         <a href="/users/<%= user.id %>" class="member-row">
-          <img src="<%= user.file %>">
+          <% if user.file.file %>
+            <img src="<%= user.file %>">
+          <% else %>
+            <img src="https://www.libstash.com/public/avatars/default.png">
+          <% end %>
           <p><%= user.name %></p>
-          <p><%= Story.where(assignee_id: user.id).count %></p>
+          <div class="assigned"><%= Story.where(assignee_id: user.id).count %></div>
         </a>
       <% end %>
     </div>

@@ -1,7 +1,13 @@
 <div id="user-profile" class="col-sm-6 col-sm-offset-3">
   <div class="row">
     <div class="user-info col-sm-3">
-      <a href="/users/<%= @user.id %>/photo"><img src="<%= get_user_img %>"></a>
+      <a href="/users/<%= @user.id %>/photo">
+      <% if @user.file.file %>
+          <img src="<%= @user.file %>">
+        <% else %>
+          <img src="https://www.libstash.com/public/avatars/default.png">
+        <% end %>
+      </a>
       <h2><%= @user.name %></h2>
       <h3><%= @user.team.team_name %></h3>
       <p class="grey"><%= @user.created_at.to_s(:long) %></p>

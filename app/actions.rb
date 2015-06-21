@@ -102,7 +102,7 @@ post '/users/:id/photo' do
 end
 
 get '/stories' do
-  @stories = Story.where(team_id: get_current_user.team_id).all
+  @stories = Story.where(team_id: get_current_user.team_id).order(priority: :desc).all
   @team = User.where(id: get_current_user.team_id).all
   erb :'stories/index'
 end

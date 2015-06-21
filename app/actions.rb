@@ -111,6 +111,12 @@ get '/stories' do
   erb :'stories/index'
 end
 
+get '/teams/:id' do
+  @stories = Story.where(team_id: :id).order(priority: :desc).all
+  @team = User.where(team_id: :id).all
+  erb :'stories/index'
+end
+
 get '/stories/new' do 
   get_all_users
   @story = Story.new

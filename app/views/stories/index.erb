@@ -1,28 +1,14 @@
-<!-- <p>team members</p>
-<% @team.each do |team_member| %>
-  <%= team_member.name  %>
-<% end %> -->
-
 <div class="container-dark col-sm-7 col-sm-offset-1">
   <h1>All Stories</h1>
-
   <div class="col-sm-12" id="story-table">
     <header class="row">
-      <div class="col-sm-1"><h4>ID</h4></div>
-      <div class="col-sm-6"><h4>Title</h4></div>
-      <div class="col-sm-2"><h4>Creator</h4></div>
-      <div class="col-sm-2"><h4>Assignee</h4></div>
-      <div class="col-sm-1"><span class="fui-alert-circle"></span></div>
+      <div class="col-sm-1"><h4>ID<span class="fui-triangle-right-large icon" onclick="listBy('id', Number)"></span></h4></div>
+      <div class="col-sm-6"><h4>Title <span class="fui-triangle-up icon" onclick="listBy('role', function(a){return a.toUpperCase()})"></span></h4></div>
+      <div class="col-sm-2"><h4>Creator <span class="fui-triangle-right-large icon" onclick="listBy('user_id', Number)"></span></h4></div>
+      <div class="col-sm-2"><h4>Assignee <span class="fui-triangle-right-large icon" onclick="listBy('assignee_id', Number)"></span></h4></div>
+      <div class="col-sm-1"><span class="fui-alert-circle"></span><span class="fui-triangle-right-large icon" onclick="listBy('priority', Number)"></span></div>
     </header>
-    <% @stories.each do |story| %>
-      <div class="row story-row">
-        <div class="col-sm-1"><a href="/stories/<%= story.id %>/edit"><%= story.id %></a></div>
-        <div class="col-sm-6"><a href="/stories/<%= story.id %>/edit"><%= story.role %> should be able to <%= story.goal.downcase %></a></div>
-        <div class="col-sm-2"><a href="/users/<%= story.user.id %>"><%= story.user.name %></a></div>
-        <div class="col-sm-2"><a href="/users/<%= story.assignee.id if story.assignee %>"><%= story.assignee.name if story.assignee %></a></div>
-        <div class="col-sm-1"><a href="/stories/<%= story.id %>/edit">  <%= story.priority %></a></div>
-      </div>
-    <% end %>
   </div>
 </div>
+<script src="/js/stories.js"></script>
 <%= erb :'/users/_sidebar' %>

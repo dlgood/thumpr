@@ -112,6 +112,14 @@ get '/stories' do
   erb :'stories/index'
 end
 
+# Returns JSON of all stories belonging user's team
+
+get '/stories/json' do
+  @stories = Story.where(team_id: get_current_user.team_id)
+  content_type 'application/json'
+  @stories.to_json(include: [:user, :assignee])
+end
+
 get '/teams/:id' do
   @stories = Story.where(team_id: :id).order(priority: :desc).all
   @team = User.where(team_id: :id).all

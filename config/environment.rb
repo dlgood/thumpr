@@ -33,6 +33,10 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
+# Set timezones
+
+Time.zone = "Pacific Time (US & Canada)"
+
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
@@ -42,3 +46,5 @@ require APP_ROOT.join('app', 'actions')
 CarrierWave.configure do |config|
   config.root = APP_ROOT + 'public/'
 end
+
+

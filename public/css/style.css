@@ -36,7 +36,8 @@ body, html {
   padding: 0 50px 30px 0; }
   #create-stories h2 {
     float: left;
-    margin: 60px 0 40px 40px; }
+    margin: 60px 0 40px 40px;
+    color: white; }
   #create-stories .story-details {
     float: right; }
 
@@ -46,6 +47,16 @@ body, html {
   overflow: hidden;
   margin-top: 50px;
   padding: 20px; }
+  .container-dark .edit {
+    margin: 0;
+    padding: 0; }
+    .container-dark .edit h2 {
+      color: white;
+      margin-bottom: 35px; }
+  .container-dark .edit-story {
+    border-radius: 7px;
+    margin-top: 1em;
+    padding: 25px 15px 15px 15px; }
   .container-dark h1 {
     color: white;
     margin: 0 20px 20px 20px;
@@ -206,3 +217,7 @@ header {
 .fui-alert-circle {
   position: relative;
   top: 4px; }
+
+.edit-story {
+  background-color: #FFF;
+  color: #34495e; }

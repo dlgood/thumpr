@@ -1,29 +1,36 @@
 <div class = "row">
-  <form method="post" action="/stories/edit" id="create-stories" class="form-horizontal col-md-offset-3 col-md-6">
-    <div class = "col-md-6 create-stories">
-      <h2>Edit Story</h2>
-    </div> 
-    <div class = "col-md-6 story-group story-details">
-      <div class = "story-group">
-        <header>Story #<%= @story.id %> details</header>
-        <div class = "thumb">
-          <img src="<%= get_user_img %>" class = "thumb" />
-        </div> 
-        <div class = "details-items">
-          <ul>
-            <li>Created by: <%= @story.user.name %></li>
-            <li>Updated at: <%= @story.updated_at %></li>
-            <li>Created at: <%= @story.created_at %></li>
-          </ul>
+  <form method="post" action="/stories/edit" class="form-horizontal col-md-offset-3 col-md-6 container-dark">
+    <div class = "container-dark edit">
+      <div class = "col-md-6">
+        <h2>Edit Story</h2>
+      </div> 
+      <div class = "col-md-6 story-details">
+        <div>
+          <header>Story #<%= @story.id %> details</header>
+          <div class = "thumb">
+            <img src="<%= get_user_img %>" class = "thumb" />
+          </div> 
+          <div class = "details-items">
+            <ul>
+              <li>Created by: <a href="/users/<%= @story.user.id %>"><%= @story.user.name %></a></li>
+              <li>Created on: <%= @story.created_at.strftime("%m-%d-%Y%l:%M %p") %></li>
+              <% if @story.updated_at > @story.created_at %>
+                <li>Updated on: <%= @story.updated_at.strftime("%m-%d-%Y%l:%M %p") %></li>
+              <% end %>  
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class = "clear-both"></div>
-    <input type="hidden" name="id" value="<%= @story.id %>">
-      <%= erb :"stories/_form" %>
-    <div class="form-group">
-      <div class="col-sm-3 col-sm-offset-9">
-        <input type="submit" value="Update" class="btn btn-primary btn-lg btn-block">
+
+    <div class = "edit-story">
+      <div class = "clear-both"></div>
+      <input type="hidden" name="id" value="<%= @story.id %>">
+        <%= erb :"stories/_form" %>
+      <div class="form-group">
+        <div class="col-sm-3 col-sm-offset-9">
+          <input type="submit" value="Update" class="btn btn-primary btn-lg btn-block">
+        </div>
       </div>
     </div>
   </form>

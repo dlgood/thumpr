@@ -1,2 +1,2 @@
 # thumpr
-## Fucking fast.
+## Fast story creation

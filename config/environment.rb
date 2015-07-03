@@ -10,7 +10,7 @@ require 'sinatra/contrib/all' # Requires cookies, among other things
 
 require 'sinatra/flash'
  
-require 'pry'
+require 'pry' if development?
 
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
